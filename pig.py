@@ -1,3 +1,4 @@
+# Pig Dice Game
 import random 
 
 def roll():
@@ -25,6 +26,7 @@ player_scores = [0 for _ in range(players)]
 while max(player_scores) < max_score:
     for players_idx in range(players):
         print("\nPlayer Number", players_idx + 1, "turn has just started.!!\n")
+        print("Your total score is:", player_scores[players_idx])
         current_score = 0
 
         while True:
@@ -46,3 +48,6 @@ while max(player_scores) < max_score:
             
         player_scores[players_idx] += current_score
         print("Your total score is:", player_scores[players_idx])
+max_score = max(player_scores)
+win_idx = player_scores.index(max_score)
+print("\nPlayer Number", win_idx + 1, "has won the game with a score of", max_score, "!!")
